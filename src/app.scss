@@ -20,10 +20,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // transition: all ease-in-out 250ms;
+    transition: all ease-in-out 250ms;
+    outline: none;
     &:hover {
       border: 5px solid tomato;
       background-color: brown;
+    }
+    &.--selected {
+      border: 5px solid tomato;
+      background-color: blue;
     }
   }
 }

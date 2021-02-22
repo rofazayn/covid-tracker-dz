@@ -11,10 +11,17 @@ const MapCanvas = () => {
       .get('https://api.corona-dz.live/province/latest')
       .then((d) => {
         console.log(d);
+        console.log(d.data[4]);
         setCovData(d.data);
       })
       .catch((err) => console.error(err));
   }, []);
+
+  useEffect(() => {
+    if (covData !== null) {
+      setSelectedProvince(covData[4]);
+    }
+  }, [covData]);
 
   const [viewport, setViewport] = useState({
     latitude: 28.143566700425612,
@@ -30,7 +37,7 @@ const MapCanvas = () => {
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={(viewport) => setViewport(viewport)}
     >
-      {covData !== null ? (
+      {covData !== null && selectedProvince !== null ? (
         covData.map((province) => (
           <Marker
             className='marker'
@@ -39,7 +46,11 @@ const MapCanvas = () => {
             latitude={province.latitude}
           >
             <button
-              className='marker__button'
+              className={`marker__button 
+              ${
+                province.provinceId === selectedProvince.provinceId &&
+                '--selected'
+              }`}
               style={{
                 width: `${
                   (province.data[0].confirmed / 619 + 3) * viewport.zoom
@@ -48,6 +59,10 @@ const MapCanvas = () => {
                   (province.data[0].confirmed / 619 + 3) * viewport.zoom
                 }px`,
               }}
+              onClick={(e) => {
+                e.preventDefault();
+                return setSelectedProvince(province);
+              }}
             >
               <div className='marker__inner'></div>
             </button>
@@ -55,6 +70,11 @@ const MapCanvas = () => {
         ))
       ) : (
         <p>Fetching data...</p>
+      )}
+      {selectedProvince && (
+        <p style={{ color: 'white' }}>
+          {JSON.stringify(selectedProvince, null, 2)}
+        </p>
       )}
     </ReactMapGl>
   );
