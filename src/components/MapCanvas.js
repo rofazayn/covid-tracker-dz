@@ -10,9 +10,13 @@ const MapCanvas = () => {
     axios
       .get('https://api.corona-dz.live/province/latest')
       .then((d) => {
-        console.log(d);
-        console.log(d.data[4]);
-        setCovData(d.data);
+        let fetchedData = d.data;
+        fetchedData[24].latitude = 36.357;
+        fetchedData[24].longitude = 6.639;
+        return fetchedData;
+      })
+      .then((fetchedData) => {
+        setCovData(fetchedData);
       })
       .catch((err) => console.error(err));
   }, []);
