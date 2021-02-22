@@ -1,0 +1,29 @@
+.marker {
+  position: relative;
+  &__inner {
+    color: white;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 99, 71, 0.4);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // transition: all ease-in-out 250ms;
+    &:hover {
+      border: 5px solid tomato;
+      background-color: brown;
+    }
+  }
+}
