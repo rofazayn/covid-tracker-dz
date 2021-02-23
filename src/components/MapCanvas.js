@@ -75,11 +75,11 @@ const MapCanvas = () => {
       ) : (
         <p>Fetching data...</p>
       )}
-      {selectedProvince && (
+      {/* {selectedProvince && (
         <p style={{ color: 'white' }}>
           {JSON.stringify(selectedProvince, null, 2)}
         </p>
-      )}
+      )} */}
     </ReactMapGl>
   );
 };

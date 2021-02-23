@@ -28,7 +28,8 @@
     }
     &.--selected {
       border: 5px solid tomato;
-      background-color: blue;
+      // background-color: rgb(0, 110, 255);
+      background-color: #070707;
     }
   }
 }
