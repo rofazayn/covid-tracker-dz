@@ -1,10 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ReactMapGl, { Marker } from 'react-map-gl';
 import axios from 'axios';
+import { DataContext } from '../context/DataContext';
 
 const MapCanvas = () => {
-  const [covData, setCovData] = useState(null);
-  const [selectedProvince, setSelectedProvince] = useState(null);
+  const {
+    covData,
+    setCovData,
+    selectedProvince,
+    setSelectedProvince,
+  } = useContext(DataContext);
 
   useEffect(() => {
     axios
@@ -75,11 +80,11 @@ const MapCanvas = () => {
       ) : (
         <p>Fetching data...</p>
       )}
-      {/* {selectedProvince && (
+      {selectedProvince && (
         <p style={{ color: 'white' }}>
           {JSON.stringify(selectedProvince, null, 2)}
         </p>
-      )} */}
+      )}
     </ReactMapGl>
   );
 };
