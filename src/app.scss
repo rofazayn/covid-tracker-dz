@@ -1,3 +1,5 @@
+$clr-shadow: rgba(0, 0, 0, 0.16);
+$clr-bg: rgba(13, 13, 13, 1);
 .marker {
   position: relative;
   &__inner {
@@ -31,5 +33,22 @@
       // background-color: rgb(0, 110, 255);
       background-color: #070707;
     }
+  }
+}
+
+.logo {
+  width: 96px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: $clr-bg;
+  box-shadow: 0 3px 6px $clr-shadow;
+  z-index: 100;
+  cursor: default;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
 }
