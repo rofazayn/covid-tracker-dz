@@ -1,5 +1,7 @@
 $clr-shadow: rgba(0, 0, 0, 0.16);
 $clr-bg: rgba(13, 13, 13, 1);
+$clr-primary: rgba(114, 114, 114, 1);
+
 .marker {
   position: relative;
   &__inner {
@@ -50,5 +52,33 @@ $clr-bg: rgba(13, 13, 13, 1);
     justify-content: center;
     width: 100%;
     height: 100%;
+  }
+}
+
+.snackbar {
+  width: 320px;
+  min-height: 96px;
+  border-radius: 8px;
+  background-color: $clr-bg;
+  box-shadow: 0 3px 6px $clr-shadow;
+  z-index: 100;
+  &__inner {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 24px;
+    flex-direction: row;
+  }
+  &__icon {
+    display: flex;
+    z-index: 10;
+  }
+  &__message {
+    padding-inline-start: 16px;
+    width: 100%;
+    span {
+      color: $clr-primary;
+      line-height: 1.5;
+    }
   }
 }
