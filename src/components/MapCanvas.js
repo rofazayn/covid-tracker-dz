@@ -18,19 +18,20 @@ const MapCanvas = () => {
         let fetchedData = d.data;
         fetchedData[24].latitude = 36.357;
         fetchedData[24].longitude = 6.639;
+        console.log(d);
         return fetchedData;
       })
       .then((fetchedData) => {
         setCovData(fetchedData);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [setCovData]);
 
   useEffect(() => {
     if (covData !== null) {
       setSelectedProvince(covData[4]);
     }
-  }, [covData]);
+  }, [covData, setSelectedProvince]);
 
   const [viewport, setViewport] = useState({
     latitude: 28.143566700425612,
@@ -42,6 +43,13 @@ const MapCanvas = () => {
   return (
     <ReactMapGl
       {...viewport}
+      className='mapbox'
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        zIndex: 0,
+      }}
       mapStyle='mapbox://styles/rofazayn/ckldp21y54b2i17nuq4el5er9'
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={(viewport) => setViewport(viewport)}
@@ -80,11 +88,11 @@ const MapCanvas = () => {
       ) : (
         <p>Fetching data...</p>
       )}
-      {selectedProvince && (
+      {/* {selectedProvince && (
         <p style={{ color: 'white' }}>
           {JSON.stringify(selectedProvince, null, 2)}
         </p>
-      )}
+      )} */}
     </ReactMapGl>
   );
 };

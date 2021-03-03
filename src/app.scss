@@ -1,3 +1,11 @@
+$clr-shadow: rgba(0, 0, 0, 0.16);
+$clr-bg: rgba(13, 13, 13, 1);
+$clr-primary: rgba(114, 114, 114, 1);
+
+.App {
+  height: 100vh;
+}
+
 .marker {
   position: relative;
   &__inner {
@@ -30,6 +38,115 @@
       border: 5px solid tomato;
       // background-color: rgb(0, 110, 255);
       background-color: #070707;
+    }
+  }
+}
+
+.logo {
+  width: 96px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: $clr-bg;
+  box-shadow: 0 3px 6px $clr-shadow;
+  z-index: 100;
+  cursor: default;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.snackbar {
+  width: 320px;
+  min-height: 96px;
+  border-radius: 8px;
+  background-color: $clr-bg;
+  box-shadow: 0 3px 6px $clr-shadow;
+  z-index: 100;
+  &__inner {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 24px;
+    flex-direction: row;
+  }
+  &__icon {
+    display: flex;
+    z-index: 10;
+  }
+  &__message {
+    padding-inline-start: 16px;
+    width: 100%;
+    span {
+      color: $clr-primary;
+      line-height: 1.5;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px;
+  height: 100%;
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+.mapbox {
+  // z-index: 1;
+  // position: fixed;
+}
+
+.info {
+  max-width: 330px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.data {
+  max-width: 330px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 24px;
+  width: 320px;
+  min-height: 96px;
+  border-radius: 8px;
+  background-color: $clr-bg;
+  box-shadow: 0 3px 6px $clr-shadow;
+  z-index: 100;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    color: $clr-primary;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &__icon {
+    svg {
+      fill: $clr-primary;
     }
   }
 }
