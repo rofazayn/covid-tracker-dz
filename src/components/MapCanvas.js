@@ -18,20 +18,20 @@ const MapCanvas = () => {
         let fetchedData = d.data;
         fetchedData[24].latitude = 36.357;
         fetchedData[24].longitude = 6.639;
-        console.log(d.data);
+        console.log(d);
         return fetchedData;
       })
       .then((fetchedData) => {
         setCovData(fetchedData);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [setCovData]);
 
   useEffect(() => {
     if (covData !== null) {
       setSelectedProvince(covData[4]);
     }
-  }, [covData]);
+  }, [covData, setSelectedProvince]);
 
   const [viewport, setViewport] = useState({
     latitude: 28.143566700425612,
