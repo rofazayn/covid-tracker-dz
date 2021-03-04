@@ -36,7 +36,7 @@ const MapCanvas = () => {
   const [viewport, setViewport] = useState({
     latitude: 28.143566700425612,
     longitude: 3.661734466259734,
-    zoom: 4.6,
+    zoom: 4,
     width: '100vw',
     height: '100vh',
   });
