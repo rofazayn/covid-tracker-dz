@@ -43,8 +43,9 @@ $clr-primary: rgba(114, 114, 114, 1);
 }
 
 .logo {
-  width: 96px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
+  padding: 16px;
   border-radius: 8px;
   background-color: $clr-bg;
   box-shadow: 0 3px 6px $clr-shadow;
@@ -61,7 +62,7 @@ $clr-primary: rgba(114, 114, 114, 1);
 
 .snackbar {
   width: 320px;
-  min-height: 96px;
+  padding-bottom: 8px;
   border-radius: 8px;
   background-color: $clr-bg;
   box-shadow: 0 3px 6px $clr-shadow;
@@ -70,15 +71,16 @@ $clr-primary: rgba(114, 114, 114, 1);
     display: flex;
     height: 100%;
     width: 100%;
-    padding: 24px;
+    padding: 16px;
     flex-direction: row;
   }
   &__icon {
     display: flex;
+    width: 16px;
     z-index: 10;
   }
   &__message {
-    padding-inline-start: 16px;
+    padding-inline-start: 8px;
     width: 100%;
     span {
       color: $clr-primary;
@@ -89,9 +91,8 @@ $clr-primary: rgba(114, 114, 114, 1);
 
 .container {
   width: 100%;
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 36px;
+  padding: 24px;
   height: 100%;
   position: relative;
 }
@@ -126,7 +127,7 @@ $clr-primary: rgba(114, 114, 114, 1);
 }
 
 .card {
-  padding: 24px;
+  padding: 16px;
   width: 320px;
   min-height: 96px;
   border-radius: 8px;
