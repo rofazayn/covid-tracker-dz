@@ -151,3 +151,8 @@ $clr-primary: rgba(114, 114, 114, 1);
     }
   }
 }
+
+.mapbox-logo,
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
