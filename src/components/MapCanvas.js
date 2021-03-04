@@ -53,6 +53,7 @@ const MapCanvas = () => {
       mapStyle='mapbox://styles/rofazayn/ckldp21y54b2i17nuq4el5er9'
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       onViewportChange={(viewport) => setViewport(viewport)}
+      attributionControl={false}
     >
       {covData !== null && selectedProvince !== null ? (
         covData.map((province) => (
