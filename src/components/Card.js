@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as InfoIconSvg } from '../assets/svg/info.svg';
 
-const Card = ({ title }) => {
+const Card = ({ title, children }) => {
   return (
     <div className='card'>
       <div className='card__header'>
@@ -9,6 +9,7 @@ const Card = ({ title }) => {
         <div className='card__icon'>
           <InfoIconSvg />
         </div>
+        <div className='card__content'>{children}</div>
       </div>
     </div>
   );
