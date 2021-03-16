@@ -9,8 +9,8 @@ const Card = ({ title, children }) => {
         <div className='card__icon'>
           <InfoIconSvg />
         </div>
-        <div className='card__content'>{children}</div>
       </div>
+      <div className='card__content'>{children}</div>
     </div>
   );
 };
