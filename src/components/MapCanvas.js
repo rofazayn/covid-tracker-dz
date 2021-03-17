@@ -7,18 +7,25 @@ const MapCanvas = () => {
   const {
     covData,
     setCovData,
+    nationalCovData,
+    setNationalCovData,
     selectedProvince,
     setSelectedProvince,
   } = useContext(DataContext);
 
   useEffect(() => {
     axios
+      .get('https://api.corona-dz.live/country/latest')
+      .then((d) => {
+        setNationalCovData(d.data);
+      })
+      .catch((err) => console.error(err));
+    axios
       .get('https://api.corona-dz.live/province/latest')
       .then((d) => {
         let fetchedData = d.data;
         fetchedData[24].latitude = 36.357;
         fetchedData[24].longitude = 6.639;
-        console.log(d);
         return fetchedData;
       })
       .then((fetchedData) => {

@@ -1,6 +1,11 @@
 $clr-shadow: rgba(0, 0, 0, 0.16);
 $clr-bg: rgba(13, 13, 13, 1);
 $clr-primary: rgba(114, 114, 114, 1);
+$clr-secondary: rgba(40, 40, 40, 1);
+$clr-vein: rgba(255, 99, 71, 1);
+$clr-warning: rgba(255, 99, 71, 1);
+$clr-error: rgba(255, 39, 39, 1);
+$clr-success: rgba(71, 255, 156, 1);
 
 * {
   padding: 0;
@@ -17,7 +22,7 @@ body {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -177,9 +182,70 @@ code {
       fill: $clr-primary;
     }
   }
+
+  &__block {
+    &.--v-centered {
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+    }
+  }
 }
 
 .mapbox-logo,
 .mapboxgl-ctrl-logo {
   display: none !important;
+}
+
+.national {
+  &__cases {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        // background: black;
+        margin-inline-end: 8px;
+        &.--active {
+          background-color: $clr-warning;
+        }
+        &.--recovered {
+          background-color: $clr-success;
+        }
+        &.--fatal {
+          background-color: $clr-error;
+        }
+      }
+    }
+  }
+}
+
+.typography {
+  &__large {
+    margin-bottom: 8px;
+    color: $clr-vein;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__regular {
+    color: $clr-primary;
+    font-size: 1rem;
+    font-weight: 400;
+    &.--badge {
+      padding: 2px 4px;
+      border-radius: 8px;
+      background-color: $clr-secondary;
+      font-weight: 500;
+      margin-inline-start: 12px;
+    }
+    
+  }
 }

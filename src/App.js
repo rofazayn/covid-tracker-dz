@@ -1,6 +1,7 @@
 import './app.scss';
 import Card from './components/Card';
 import Container from './components/Container';
+import DataDisplay from './components/DataDisplay';
 import Logo from './components/Logo';
 import MapCanvas from './components/MapCanvas';
 import Snackbar from './components/Snackbar';
@@ -18,9 +19,7 @@ function App() {
                 The app is showing real and live covid data from Algeria.
               </Snackbar>
             </div>
-            <div className='data'>
-              <Card title='Algeria' />
-            </div>
+            <DataDisplay />
           </div>
           <MapCanvas />
         </Container>
