@@ -170,6 +170,7 @@ code {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // margin-bottom: 8px;
   }
   &__title {
     color: $clr-primary;
@@ -184,6 +185,7 @@ code {
   }
 
   &__block {
+    margin-bottom: 8px;
     &.--v-centered {
       display: flex;
       align-items: center;
@@ -201,7 +203,7 @@ code {
   &__illustration {
     display: flex;
     width: 100%;
-    margin-top: 16px;
+    margin: 24px 0 8px 0;
     .wrapper {
       display: flex;
       flex-direction: row;
@@ -262,7 +264,7 @@ code {
 
 .typography {
   &__large {
-    margin-bottom: 8px;
+    // margin-bottom: 8px;
     color: $clr-vein;
     font-family: 'Roboto';
     font-size: 2rem;
@@ -272,6 +274,11 @@ code {
     color: $clr-primary;
     font-size: 1rem;
     font-weight: 400;
+    &.value {
+      display: flex;
+      flex-direction: row;
+
+    }
     &.--badge {
       padding: 2px 4px;
       border-radius: 8px;

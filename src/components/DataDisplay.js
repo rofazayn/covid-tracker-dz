@@ -30,6 +30,9 @@ const DataDisplay = () => {
               </div>
               <div className='typography__regular value'>
                 {formatNumber(nationalCovData.treatment)}
+                <div className='typography__regular --badge'>
+                  +{nationalCovData.newConfirmed}
+                </div>
               </div>
             </div>
             <div className='national__cases'>
@@ -39,6 +42,9 @@ const DataDisplay = () => {
               </div>
               <div className='typography__regular value'>
                 {formatNumber(nationalCovData.recovered)}
+                <div className='typography__regular --badge'>
+                  +{nationalCovData.newRecovered}
+                </div>
               </div>
             </div>
             <div className='national__cases'>
@@ -48,6 +54,9 @@ const DataDisplay = () => {
               </div>
               <div className='typography__regular value'>
                 {formatNumber(nationalCovData.deaths)}
+                <div className='typography__regular --badge'>
+                  +{nationalCovData.newDeaths}
+                </div>
               </div>
             </div>
             <div className='national__illustration'>
