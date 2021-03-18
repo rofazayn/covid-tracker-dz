@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import ReactMapGl, { Marker } from 'react-map-gl';
 import axios from 'axios';
 import { DataContext } from '../context/DataContext';
+import mapboxgl from 'mapbox-gl';
 
 const MapCanvas = () => {
   const {
@@ -101,3 +102,6 @@ const MapCanvas = () => {
 };
 
 export default MapCanvas;
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
