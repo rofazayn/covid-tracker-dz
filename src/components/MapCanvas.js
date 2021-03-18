@@ -32,7 +32,7 @@ const MapCanvas = () => {
         setCovData(fetchedData);
       })
       .catch((err) => console.error(err));
-  }, [setCovData]);
+  }, [setCovData, setNationalCovData]);
 
   useEffect(() => {
     if (covData !== null) {
@@ -96,11 +96,6 @@ const MapCanvas = () => {
       ) : (
         <p>Fetching data...</p>
       )}
-      {/* {selectedProvince && (
-        <p style={{ color: 'white' }}>
-          {JSON.stringify(selectedProvince, null, 2)}
-        </p>
-      )} */}
     </ReactMapGl>
   );
 };
