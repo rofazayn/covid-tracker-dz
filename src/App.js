@@ -1,5 +1,4 @@
 import './app.scss';
-import Card from './components/Card';
 import Container from './components/Container';
 import DataDisplay from './components/DataDisplay';
 import Logo from './components/Logo';

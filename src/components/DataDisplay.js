@@ -50,6 +50,36 @@ const DataDisplay = () => {
                 {formatNumber(nationalCovData.deaths)}
               </div>
             </div>
+            <div className='national__illustration'>
+              <div className='wrapper'>
+                <div
+                  className='active'
+                  style={{
+                    width: `${
+                      (nationalCovData.treatment * 100) /
+                      nationalCovData.confirmed
+                    }%`,
+                  }}
+                ></div>
+                <div
+                  className='recovered'
+                  style={{
+                    width: `${
+                      (nationalCovData.recovered * 100) /
+                      nationalCovData.confirmed
+                    }%`,
+                  }}
+                ></div>
+                <div
+                  className='fatal'
+                  style={{
+                    width: `${
+                      (nationalCovData.deaths * 100) / nationalCovData.confirmed
+                    }%`,
+                  }}
+                ></div>
+              </div>
+            </div>
           </div>
         </div>
       </Card>
