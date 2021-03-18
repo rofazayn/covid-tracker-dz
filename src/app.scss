@@ -2,6 +2,7 @@ $clr-shadow: rgba(0, 0, 0, 0.16);
 $clr-bg: rgba(13, 13, 13, 1);
 $clr-primary: rgba(114, 114, 114, 1);
 $clr-secondary: rgba(40, 40, 40, 1);
+$clr-dim: rgba(70 ,70 , 70, 1);
 $clr-vein: rgba(255, 99, 71, 1);
 $clr-warning: rgba(255, 99, 71, 1);
 $clr-error: rgba(255, 39, 39, 1);
@@ -155,7 +156,7 @@ code {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 .card {
@@ -165,6 +166,7 @@ code {
   border-radius: 8px;
   background-color: $clr-bg;
   box-shadow: 0 3px 6px $clr-shadow;
+  margin-bottom: 32px;
   z-index: 100;
   &__header {
     display: flex;
@@ -177,6 +179,14 @@ code {
     line-height: 1.5;
     font-size: 16px;
     font-weight: 500;
+  }
+  &__info {
+    color: $clr-dim;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 400; 
+    margin: 8px 0 16px 0;
+    max-width: 240px;
   }
   &__icon {
     svg {
@@ -204,6 +214,7 @@ code {
     display: flex;
     width: 100%;
     margin: 24px 0 8px 0;
+    
     .wrapper {
       display: flex;
       flex-direction: row;
@@ -230,6 +241,16 @@ code {
         height: 8px;
         background-color: $clr-success;
         border-radius: 16px;
+      }
+    }
+    &.--region {
+      .wrapper {
+        .recovered {
+          margin: 0;
+        }
+        .active {
+          margin-inline-end: 8px;
+        }
       }
     }
   }
@@ -266,6 +287,13 @@ code {
   &__large {
     // margin-bottom: 8px;
     color: $clr-vein;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__huge {
+    // margin-bottom: 8px;
+    color: $clr-primary;
     font-family: 'Roboto';
     font-size: 2rem;
     font-weight: 700;
