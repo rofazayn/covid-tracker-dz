@@ -2,7 +2,7 @@ $clr-shadow: rgba(0, 0, 0, 0.16);
 $clr-bg: rgba(13, 13, 13, 1);
 $clr-primary: rgba(114, 114, 114, 1);
 $clr-secondary: rgba(40, 40, 40, 1);
-$clr-dim: rgba(70 ,70 , 70, 1);
+$clr-dim: rgba(70, 70, 70, 1);
 $clr-vein: rgba(255, 99, 71, 1);
 $clr-warning: rgba(255, 99, 71, 1);
 $clr-error: rgba(255, 39, 39, 1);
@@ -23,8 +23,8 @@ body {
 
 body {
   margin: 0;
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -184,9 +184,9 @@ code {
     color: $clr-dim;
     line-height: 1.4;
     font-size: 14px;
-    font-weight: 400; 
+    font-weight: 400;
     margin: 8px 0 16px 0;
-    max-width: 240px;
+    max-width: 270px;
   }
   &__icon {
     svg {
@@ -214,7 +214,7 @@ code {
     display: flex;
     width: 100%;
     margin: 24px 0 8px 0;
-    
+
     .wrapper {
       display: flex;
       flex-direction: row;
@@ -305,7 +305,6 @@ code {
     &.value {
       display: flex;
       flex-direction: row;
-
     }
     &.--badge {
       padding: 2px 4px;
@@ -314,6 +313,5 @@ code {
       font-weight: 500;
       margin-inline-start: 12px;
     }
-    
   }
 }

@@ -157,6 +157,12 @@ const DataDisplay = () => {
           info='Please select a Wilaya from the map to see the latest coronavius data there.'
         ></Card>
       )}
+      <Card
+        title='Notice'
+        info='We hoped to show more detailed data,
+        but unfortunately this is all what the Algerian
+        authorities provide at the moment.'
+      ></Card>
     </div>
   );
 };
